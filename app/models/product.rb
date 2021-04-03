@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  # belongs_to :category
+  belongs_to :category
   has_many :reviews, dependent: :destroy
   has_many :detail_orders, dependent: :destroy
 
@@ -11,6 +11,8 @@ class Product < ApplicationRecord
         ->{select(:id, :name, :price, :image, :size).order(name: :asc)}
   scope :load_prodct_by_price,
         ->{select(:id, :name, :price, :image, :size).order(price: :asc)}
+  scope :load_product_by_cate,
+        ->(cate_id){select(:id, :name, :price, :image, :size).where(category_id: cate_id)}
 
   has_one_attached :image
 
