@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
-  root 'stores#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root "stores#index"
+  get "stores/detail/:id", to: "stores#detail", as: "detail"
 end
