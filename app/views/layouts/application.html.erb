@@ -20,6 +20,11 @@
   <body>
     <%= render "layouts/top_bar" %>
     <%= render "layouts/header" %>
+    <div class="note">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+    </div>
     <%= yield %>
     <%= render "layouts/footer" %>
   </body>

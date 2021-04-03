@@ -1,0 +1,17 @@
+vi:
+  store:
+    store: "levlinh"
+    home: "Trang Chủ"
+    about: "Giới thiệu"
+    shop: "Cửa hàng"
+    contact: "Liên hệ"
+    all: "Tất cả"
+    men: "Nam giới"
+    women: "Phụ nữ"
+    az: "A -> Z"
+    price: "Giá"
+    item: "Sản phẩm"
+    related_product: "Sản phẩm có Liên quan"
+    size: "Size: "
+    category: "Danh Mục Sản Phẩm"
+    no_item: "Không có sản phẩm để hiển thị"
