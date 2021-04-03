@@ -1,5 +1,5 @@
 module StoresConcern
-  def load_product_by_cate
+  def load_product_for_cate
     return if params[:cate_id].blank?
 
     @products = Product.load_product_by_cate(params[:cate_id])
