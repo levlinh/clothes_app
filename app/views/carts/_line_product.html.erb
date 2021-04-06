@@ -1,0 +1,18 @@
+<% @products.each do |product| %>
+<tr>
+    <td>
+        <%= link_to detail_path(id: product.id) do %>
+        <%= image_tag product.display_image_on_cart, class: "card-img rounded-0 img-fluid" %>
+        <% end %>
+    </td>
+    <td><%= product.name %></td>
+    <td><%= product.discount %></td>
+    <td><input class="form-control" type="text" value="1" /></td>
+    <td class="text-right"><%= product.price %> €</td>
+    <td class="text-right">
+        <button class="btn btn-sm btn-danger">
+            <i class="fa fa-trash"></i>
+        </button>
+    </td>
+</tr>
+<% end %>
