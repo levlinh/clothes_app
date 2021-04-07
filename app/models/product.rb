@@ -9,16 +9,24 @@ class Product < ApplicationRecord
 
   scope :load_product_for_home_page,
         ->{select(:id, :name, :price, :image, :size).order(name: :asc)}
-  scope :load_prodct_by_price,
-        ->{select(:id, :name, :price, :image, :size).order(price: :asc)}
   scope :load_product_by_cate,
-        ->(cate_id){select(:id, :name, :price, :image, :size).where(category_id: cate_id)}
-
+        lambda{|cate_id|
+          select(:id, :name, :price, :image, :size).where(category_id: cate_id)
+        }
+  scope :load_product_on_cart,
+        lambda{|product_id|
+          select(:id, :name, :price, :discount, :image).where(id: product_id)
+        }
   has_one_attached :image
 
   def display_image
-    image.variant resize_to_limit: [500,
-      500]
+    image.variant resize_to_limit: [Settings.product.image_home,
+      Settings.product.image_home]
+  end
+
+  def display_image_on_cart
+    image.variant resize_to_limit: [Settings.product.image_cart,
+      Settings.product.image_cart]
   end
 
   private
