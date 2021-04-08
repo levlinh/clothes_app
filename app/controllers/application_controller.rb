@@ -5,10 +5,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_cart
-    unless session[:cart]
-      session[:cart] = []
-      @cart = session[:cart]
-    end
+    session[:cart] ||= {}
     @cart = session[:cart]
   end
 end
