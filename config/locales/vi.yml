@@ -16,7 +16,9 @@ vi:
     category: "Danh Mục Sản Phẩm"
     no_item: "Không có sản phẩm để hiển thị"
     add_to_cart: "Thêm vào giỏ hàng"
-  cart: 
+    quantity_on_store: "Số lượng trong Cửa hàng:"
+    description: "Chi tiết:"
+  cart:
     cart: "Giỏ hàng"
     product: "Sản phẩm"
     discount: "Giảm giá"
@@ -26,3 +28,5 @@ vi:
     total: "Tổng Tiền"
     continue: "Tiếp tục mua hàng"
     checkout: "Thanh toán"
+    quantity: "Số lượng"
+    add_success: "Đã thêm sản phẩm vào giỏ hàng"

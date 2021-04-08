@@ -7,7 +7,7 @@
     </td>
     <td><%= product.name %></td>
     <td><%= product.discount %></td>
-    <td><input class="form-control" type="text" value="1" /></td>
+    <td><%= number_field_tag t("cart.quantity"), quantity_item(product.id), min: 1, max: 10, step: 1 %></td>
     <td class="text-right"><%= product.price %> €</td>
     <td class="text-right">
         <button class="btn btn-sm btn-danger">

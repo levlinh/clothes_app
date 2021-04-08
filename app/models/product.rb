@@ -11,12 +11,10 @@ class Product < ApplicationRecord
         ->{select(:id, :name, :price, :image, :size).order(name: :asc)}
   scope :load_product_by_cate,
         lambda{|cate_id|
-          select(:id, :name, :price, :image, :size).where(category_id: cate_id)
-        }
+  select(:id, :name, :price, :image, :size).where(category_id: cate_id)        }
   scope :load_product_on_cart,
         lambda{|product_id|
-          select(:id, :name, :price, :discount, :image).where(id: product_id)
-        }
+  select(:id, :name, :price, :discount, :image).where(id: product_id)        }
   has_one_attached :image
 
   def display_image
