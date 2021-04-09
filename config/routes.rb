@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'carts/index'
   root "stores#index"
   get "stores/detail/:id", to: "stores#detail", as: "detail"
-  get "carts/:id", to: "carts#index", as: "carts"
+  get "carts", to: "carts#index", as: "carts"
+  get "add_to_cart", to: "carts#add_to_cart", as: "add_cart"
 end

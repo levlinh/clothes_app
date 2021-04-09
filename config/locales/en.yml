@@ -16,7 +16,9 @@ en:
     category: "Category"
     no_item: "No item !"
     add_to_cart: "Add To Cart"
-  cart: 
+    quantity_on_store: "Quantity on Store :"
+    description: "Description:"
+  cart:
     cart: "Carts"
     product: "Product"
     discount: "Discount"
@@ -26,3 +28,5 @@ en:
     total: "Total"
     continue: "Continue Shopping"
     checkout: "Checkout"
+    quantity: "Quantity"
+    add_success: "Added product to cart"

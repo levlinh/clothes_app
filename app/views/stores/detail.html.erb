@@ -23,11 +23,11 @@
               <i class="fa fa-star text-secondary"></i>
               <span class="list-inline-item text-dark">Rating 4.8 | 36 Comments</span>
             </p>
-            <h6>Description:</h6>
+            <h6><%= t("store.description") %></h6>
             <p><%= @product.description %></p>
             <ul class="list-inline">
               <li class="list-inline-item">
-                <h6>Discount :</h6>
+                <h6><%= t("cart.discount") %></h6>
               </li>
               <li class="list-inline-item">
                 <p class="text-muted">
@@ -37,17 +37,16 @@
             </ul>
             <ul class="list-inline">
               <li class="list-inline-item">
-                <h6>Quantity on Store :</h6>
+                <h6><%= t("store.quantity_on_store") %></h6>
               </li>
               <li class="list-inline-item">
                 <p class="text-muted">
                   <strong><%= @product.quantity %>
-                    item
                   </strong>
                 </p>
               </li>
             </ul>
-            <form action="" method="GET">
+            <%= form_with url: add_cart_path, method: :get, remote: true do |f| %>
               <input type="hidden" name="product-title" value="Activewear">
               <div class="row">
                 <div class="col-auto">
@@ -68,27 +67,24 @@
                 <div class="col-auto">
                   <ul class="list-inline pb-3">
                     <li class="list-inline-item text-right">
-                      Quantity
+                      <%= t("cart.quantity") %>
                       <input type="hidden" name="product-quanity" id="product-quanity" value="1">
                     </li>
                     <li class="list-inline-item">
-                      <span class="btn btn-success" id="btn-minus">-</span></li>
-                    <li class="list-inline-item">
-                      <span class="badge bg-secondary" id="var-value">1</span></li>
-                    <li class="list-inline-item">
-                      <span class="btn btn-success" id="btn-plus">+</span></li>
+                      <%= f.number_field :quantity, value: 1, min: 1,class: "form-control"%>
+                       <%= f.hidden_field :product_id, value: @product.id %>
                   </ul>
                 </div>
               </div>
               <div class="row pb-3">
                 <div class="col d-grid">
-                    <%= link_to t("store.add_to_cart"), carts_path(:product_id => @product.id, :quantity => 1), class: "btn btn-block btn-success"%>
+                    <%= f.submit t("store.add_to_cart"), class: "btn btn-block btn-success"%>
                 </div>
                 <div class="col d-grid">
                   <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
                 </div>
               </div>
-            </form>
+            <% end %>
 
           </div>
         </div>

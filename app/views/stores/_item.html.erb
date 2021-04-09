@@ -8,7 +8,7 @@
             <li>
               <%= link_to detail_path(id: product.id),class: "btn btn-success text-white" do %>
               <i class="far fa-eye"></i>
-            <% end %>
+              <% end %>
           </li>
           <li>
             <a class="btn btn-success text-white mt-2" href="shop-single.html">
@@ -16,9 +16,9 @@
             </a>
           </li>
           <li>
-            <a class="btn btn-success text-white mt-2" href="shop-single.html">
+            <%= link_to add_cart_path(product_id: product.id, quantity: 1),class: "btn btn-success text-white mt-2", remote: true do %>
               <i class="fas fa-cart-plus"></i>
-            </a>
+            <% end %>
           </li>
         </ul>
       </div>
