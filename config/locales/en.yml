@@ -1,4 +1,14 @@
 en:
+  count_err: "loi"
+  login:
+    login: "Login"
+    signup: "Sign up"
+    success: "Login success"
+    failed: "Login failed"
+    loggout_success: "You are logouted"
+    signup_success: "Register success"
+    signup_failds: "Register failed"
+  logout: "Logout"
   store:
     store: "levlinh"
     home: "Home"

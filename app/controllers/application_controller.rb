@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include StoresHelper
   include CartsHelper
+  include SessionsHelper
 
   before_action :set_cart
 
