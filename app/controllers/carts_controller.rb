@@ -21,4 +21,11 @@ class CartsController < ApplicationController
     flash[:success] = t("cart.update_success")
     redirect_to carts_url
   end
+
+  def destroy_item
+    @cart.delete params[:product_id]
+    session[:cart] = @cart
+    flash[:success] = t("cart.delete_success")
+    redirect_to carts_url
+  end
 end
