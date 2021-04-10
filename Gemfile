@@ -6,6 +6,7 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 ruby "2.7.0"
 
 gem "active_storage_validations", "0.8.2"
+gem "bcrypt", "~> 3.1", ">= 3.1.16"
 gem "bootstrap", "~>4.3.1"
 gem "config", "2.2.1"
 gem "faker", "~> 2.17"
@@ -25,6 +26,7 @@ gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 gem "will_paginate", "~> 3.3"
+gem "pg"
 
 gem "bootsnap", ">= 1.4.4", require: false
 
