@@ -32,3 +32,4 @@ vi:
     add_success: "Đã thêm sản phẩm vào giỏ hàng"
     update: "cập nhật"
     update_success: "cập nhật giỏ hàng thành công"
+    delete_success: "Đã xóa mặt hàng khỏi giỏ hàng"

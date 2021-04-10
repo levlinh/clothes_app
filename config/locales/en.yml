@@ -32,3 +32,4 @@ en:
     add_success: "Added product to cart"
     update: "Update"
     update_success: "Update your cart sucess"
+    delete_success: "Removed item from cart"
