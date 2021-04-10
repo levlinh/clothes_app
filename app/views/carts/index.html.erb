@@ -1,63 +1,70 @@
 <h1><%= t("cart.carts") %></h1>
 <div class="container mb-4" id="cart-box">
-    <div class="row">
-        <div class="col-12">
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col"></th>
-                            <th scope="col"><%= t("cart.product") %></th>
-                            <th scope="col"><%= t("cart.discount") %></th>
-                            <th scope="col" class="text-center"><%= t("cart.quantity") %></th>
-                            <th scope="col" class="text-right"><%= t("cart.price") %></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <%= render "line_product" %>
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col"><%= t("cart.product") %></th>
+              <th scope="col"><%= t("cart.discount") %></th>
+              <th scope="col" class="text-right"><%= t("cart.price") %></th>
+              <th scope="col" class="text-center"><%= t("cart.quantity") %></th>
+              <th scope="col" class="text-right"></th>
+              <th scope="col" class="text-right"><%= t("cart.sub_total_item") %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render "line_product" %>
 
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><%= t("cart.sub_total") %></td>
-                            <td class="text-right">255,90 €</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><%= t("cart.shipping") %></td>
-                            <td class="text-right">6,90 €</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <strong><%= t("cart.total") %></strong>
-                            </td>
-                            <td class="text-right">
-                                <strong>346,90 €</strong>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="col mb-2">
-            <div class="row">
-                <div class="col-sm-12  col-md-6">
-                    <button class="btn btn-block btn-warning"><%= t("cart.continue") %></button>
-                </div>
-                <div class="col-sm-12 col-md-6 text-right">
-                    <button class="btn btn-lg btn-block btn-success text-uppercase"><%= t("cart.checkout") %></button>
-                </div>
-            </div>
-        </div>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><%= t("cart.sub_total") %></td>
+              <td class="text-right"><%= @sub_total %>
+                €</td>
+
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><%= t("cart.shipping") %></td>
+              <td class="text-right">0 €</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <strong><%= t("cart.total") %></strong>
+              </td>
+              <td class="text-right">
+                <strong><%= @sub_total %>
+                  €</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+    <div class="col mb-2">
+      <div class="row">
+        <div class="col-sm-12  col-md-6 text-right">
+          <%= link_to t("cart.continue"), root_path, class: "btn btn-lg btn-block btn-warning text-uppercase" %>
+        </div>
+        <div class="col-sm-12 col-md-6 text-right">
+          <button class="btn btn-lg btn-block btn-success text-uppercase"><%= t("cart.checkout") %></button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
