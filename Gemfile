@@ -26,6 +26,7 @@ gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 gem "will_paginate", "~> 3.3"
+gem "pg"
 
 gem "bootsnap", ">= 1.4.4", require: false
 
