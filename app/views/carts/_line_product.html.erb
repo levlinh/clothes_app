@@ -2,7 +2,8 @@
 <tr>
   <td>
     <%= link_to detail_path(id: product.id) do %>
-      <%= image_tag product.display_image_on_cart, class: "card-img rounded-0 img-fluid" %>
+    <!-- <img class="card-img rounded-0 img-fluid" src="/assets/shop_03.jpg" style="width:50px;height:60px;"> -->
+    <%= image_tag product.display_image_on_cart, class: "card-img rounded-0 img-fluid" %>
     <% end %>
   </td>
   <td><%= product.name %></td>
@@ -16,11 +17,9 @@
   </td>
   <% end %>
   <td class="text-right">
-
     <%= link_to destroy_item_path(product_id: product.id),class: "btn btn-sm btn-danger" do %>
       <i class="fa fa-trash"></i>
       <% end %>
-
   </td>
   <td class="text-right"><%= sub_total(product) %> €</td>
 </tr>

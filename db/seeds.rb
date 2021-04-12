@@ -1,17 +1,17 @@
-# User.create!(name: "Le Linh",
-#              email:
-#   "lelinh@gmail.com",
-#              phone: "0395784141",
-#              password: "123456",
-#              password_confirmation: "123456")
-# 5.times do |i|
-#   User.create!(name: "Le Linh",
-#                email:
-#   "lelinh#{i}@gmail.com",
-#                phone: "0395784141",
-#                password: "123456",
-#                password_confirmation: "123456")
-# end
+User.create!(name: "Le Linh",
+             email:
+  "lelinh@gmail.com",
+             phone: "0395784141",
+             password: "123456",
+             password_confirmation: "123456")
+5.times do |i|
+  User.create!(name: "Le Linh",
+               email:
+  "lelinh#{i}@gmail.com",
+               phone: "0395784141",
+               password: "123456",
+               password_confirmation: "123456")
+end
 
 Category.create!(name: "Gender")
 Category.create!(name: "Sale")
