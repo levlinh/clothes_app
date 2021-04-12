@@ -16,7 +16,6 @@ class Product < ApplicationRecord
   scope :load_product_on_cart,
         lambda{|product_id|
   select(:id, :name, :price, :discount, :image).where(id: product_id)}
-  scope :load_by_key_search, ->(search){where("name LIKE ? ", "%#{search}%").order(name: :asc)}
 
 
   def display_image

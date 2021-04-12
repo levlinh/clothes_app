@@ -27,9 +27,6 @@ gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 gem "will_paginate", "~> 3.3"
 gem "pg"
-gem "aws-sdk-s3", require: false
-gem "figaro", "~> 1.2"
-gem "rails_12factor", "~> 0.0.3"
 
 gem "bootsnap", ">= 1.4.4", require: false
 
