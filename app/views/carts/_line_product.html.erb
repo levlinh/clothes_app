@@ -17,11 +17,9 @@
   </td>
   <% end %>
   <td class="text-right">
-
     <%= link_to destroy_item_path(product_id: product.id),class: "btn btn-sm btn-danger" do %>
       <i class="fa fa-trash"></i>
       <% end %>
-
   </td>
   <td class="text-right"><%= sub_total(product) %> €</td>
 </tr>
