@@ -2,8 +2,7 @@ class CartsController < ApplicationController
   include CartsConcern
 
   def index
-    @products = Product.load_product_on_cart(session[:cart].keys)
-    sub_total
+    @products = Product.load_product_on_session_cart(session[:cart].keys)
   end
 
   def add_to_cart

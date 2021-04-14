@@ -1,0 +1,99 @@
+<div class="container mb-4" id="cart-box">
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive">
+        <h1><%= t("order.your_order") %></h1>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col"><%= t("cart.product") %></th>
+              <th scope="col"><%= t("cart.discount") %></th>
+              <th scope="col" class="text-right"><%= t("cart.price") %></th>
+              <th scope="col" class="text-center"><%= t("cart.quantity") %></th>
+              <th scope="col" class="text-right"></th>
+              <th scope="col" class="text-right"><%= t("cart.sub_total_item") %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @order.order_items.each do |order_item| %>
+
+              <% load_product_from_order(order_item) %>
+                <tr>
+                  <td>
+                    <%= link_to detail_path(id: @product.id) do %>
+                    <!-- <img class="card-img rounded-0 img-fluid" src="/assets/shop_03.jpg" style="width:50px;height:60px;"> -->
+                    <%= image_tag @product.display_image_on_cart, class: "card-img rounded-0 img-fluid" %>
+                  <% end %>
+                </td>
+                <td><%= @product.name %></td>
+                <td><%= @product.discount %>
+                  %</td>
+                <td class="text-right"><%= order_item.price %>
+                  €</td>
+
+                <td><%= order_item.quantity %></td>
+
+                <td class="text-right"></td>
+                <td class="text-right"><%= order_item.amount %>
+                  €</td>
+              </tr>
+            <% end %>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><%= t("cart.sub_total") %></td>
+              <td class="text-right"><%= total_order(@order) %>
+                €</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><%= t("cart.shipping") %></td>
+              <td class="text-right">0 €</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <strong><%= t("cart.total") %></strong>
+              </td>
+              <td class="text-right">
+                <strong><%= total_order(@order) %>
+                  €</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h3><%= t("order.info") %></h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col"><%= t("order.name_shipping") %></th>
+              <th scope="col"><%= t("order.phone_shipping") %></th>
+              <th scope="col" class="text-right"><%= t("order.address_shipping") %></th>
+              <th scope="col" class="text-right"><%= t("order.messages") %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @order.name_shipping %></td>
+              <td><%= @order.phone_shipping %></td>
+              <td class="text-right"><%= @order.address_shipping %></td>
+              <td><%= @order.messages %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

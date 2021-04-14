@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :category
   has_many :reviews, dependent: :destroy
-  has_many :detail_orders, dependent: :destroy
+  has_many :order_items, dependent: :destroy
   has_many_attached :images
 
   after_commit :add_default_image, on: [:create, :update]
@@ -11,13 +11,11 @@ class Product < ApplicationRecord
   scope :load_product_for_home_page,
         ->{select(:id, :name, :price, :image, :size).order(name: :asc)}
   scope :load_product_by_cate,
-        lambda{|cate_id|
-  select(:id, :name, :price, :image, :size).where(category_id: cate_id)}
-  scope :load_product_on_cart,
-        lambda{|product_id|
-  select(:id, :name, :price, :discount, :image).where(id: product_id)}
-  scope :load_by_key_search, ->(search){where("name LIKE ? ", "%#{search}%").order(name: :asc)}
-
+        ->(cate_id){select(:id, :name, :price, :image, :size).where(category_id: cate_id)}
+  scope :load_product_on_session_cart,
+        ->(product_id){select(:id, :name, :price, :discount, :image).where(id: product_id)}
+  scope :load_by_key_search,
+        ->(search){where("name LIKE ? ", "%#{search}%").order(name: :asc)}
 
   def display_image
     images[0].variant resize_to_limit: [Settings.product.image_home,
@@ -27,6 +25,14 @@ class Product < ApplicationRecord
   def display_image_on_cart
     images[0].variant resize_to_limit: [Settings.product.image_cart,
       Settings.product.image_cart]
+  end
+
+  def last_price
+    if discount.present?
+      price - price * discount / 100
+    else
+      price
+    end
   end
 
   private
