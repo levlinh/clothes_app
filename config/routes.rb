@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   post "/orders", to: "orders#create", as: "orders"
   get "/order/:id", to: "orders#show"
   resources "orders"
+  get "products/new"
 
   get '*path', to: redirect('/'), constraints: lambda { |req|
     req.path.exclude? 'rails/active_storage'
