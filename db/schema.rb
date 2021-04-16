@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2021_04_02_074335) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "detail_orders", force: :cascade do |t|
+  create_table "order_items", force: :cascade do |t|
     t.bigint "order_id"
     t.bigint "product_id"
     t.integer "quantity"
@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 2021_04_02_074335) do
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["order_id"], name: "index_detail_orders_on_order_id"
-    t.index ["product_id"], name: "index_detail_orders_on_product_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["product_id"], name: "index_order_items_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -126,8 +126,8 @@ ActiveRecord::Schema.define(version: 2021_04_02_074335) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "detail_orders", "orders"
-  add_foreign_key "detail_orders", "products"
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "products"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "categories"
   add_foreign_key "reviews", "products"

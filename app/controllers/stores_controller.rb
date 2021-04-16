@@ -13,5 +13,4 @@ class StoresController < ApplicationController
     @product = Product.find_by(id: params[:id])
     @products = Product.load_product_by_cate(@product.category_id)
   end
-
 end
