@@ -17,23 +17,18 @@
           </thead>
           <tbody>
             <% @order.order_items.each do |order_item| %>
-
-              <% load_product_from_order(order_item) %>
                 <tr>
                   <td>
-                    <%= link_to detail_path(id: @product.id) do %>
+                    <%= link_to detail_path(id: order_item.product_id) do %>
                     <!-- <img class="card-img rounded-0 img-fluid" src="/assets/shop_03.jpg" style="width:50px;height:60px;"> -->
-                    <%= image_tag @product.display_image_on_cart, class: "card-img rounded-0 img-fluid" %>
+                    <%= image_tag order_item.product_display_image_on_cart, class: "card-img rounded-0 img-fluid" %>
                   <% end %>
                 </td>
-                <td><%= @product.name %></td>
-                <td><%= @product.discount %>
-                  %</td>
+                <td><%= order_item.product_name %></td>
+                <td></td>
                 <td class="text-right"><%= order_item.price %>
                   €</td>
-
                 <td><%= order_item.quantity %></td>
-
                 <td class="text-right"></td>
                 <td class="text-right"><%= order_item.amount %>
                   €</td>

@@ -4,10 +4,10 @@ vi:
     login: "Đăng nhập"
     signup: "Đăng ký"
     success: "Đăng nhập thành công"
-    failed: "Đăng nhập không thành công"
+    failed: "Email hoặc mật khẩu không chính xác"
     loggout_success: "Bạn đã đăng xuất"
     signup_success: "Đăng ký thành công"
-    signup_failds: "Email hoặc mật khẩu không chính xác"
+    signup_failds: "Đăng ký không thành công"
   logout: "Đăng xuất"
   store:
     store: "levlinh"

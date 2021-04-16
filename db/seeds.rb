@@ -3,14 +3,16 @@ User.create!(name: "Le Linh",
   "lelinh@gmail.com",
              phone: "0395784141",
              password: "123456",
-             password_confirmation: "123456")
+             password_confirmation: "123456",
+             role: 1)
 5.times do |i|
   User.create!(name: "Le Linh",
                email:
   "lelinh#{i}@gmail.com",
                phone: "0395784141",
                password: "123456",
-               password_confirmation: "123456")
+               password_confirmation: "123456",
+               role: 0)
 end
 
 Category.create!(name: "Gender")
@@ -28,13 +30,13 @@ Category.create!(name: "Shoes",
                 id_parent: 3)
 
 10.times do |i|
-  name = "BANDOULIÈRE 25"
+  name = Faker::Name.name
   category_id = 5
   price = i * 100
   image = "/images/shop_03.jpg"
   discount = 15
   size = 1
-  description = "The versatile Multi Pochette Accessoires is composed of a bag, a pouch, and a round coin purse, all made from pastel-colored Monogram Giant canvas. This hybrid bag features an adjustable jacquard strap with Louis Vuitton Malletier inscribed on it for shoulder or cross-body wear as well as a removable gold-color chain for hand and short-shoulder carry."
+  description = Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false)
   quantity = i * 5
   Product.create!(
     category_id: category_id,
