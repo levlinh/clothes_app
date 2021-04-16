@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include OrdersHelper
 
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:warning] = exception.message
+    redirect_to root_url
+  end
+
   before_action :set_cart
 
   private
