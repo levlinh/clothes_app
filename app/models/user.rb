@@ -4,6 +4,8 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
+  enum role: {admin: 1, user: 0}
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
 
   validates :email, presence: true,

@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 2021_04_02_074335) do
     t.date "day_of_birth"
     t.string "address"
     t.string "image"
-    t.integer "role"
+    t.integer "role", default: 0
     t.string "password_digest"
     t.string "remember_digest"
     t.string "reset_digest"
