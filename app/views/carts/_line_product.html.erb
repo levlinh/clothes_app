@@ -2,8 +2,8 @@
 <tr>
   <td>
     <%= link_to detail_path(id: product.id) do %>
-    <!-- <img class="card-img rounded-0 img-fluid" src="/assets/shop_03.jpg" style="width:50px;height:60px;"> -->
-    <%= image_tag product.display_image_on_cart, class: "card-img rounded-0 img-fluid" %>
+    <img class="card-img rounded-0 img-fluid" src="/assets/shop_03.jpg" style="width:50px;height:60px;">
+    <%# <%= image_tag product.display_image_on_cart, class: "card-img rounded-0 img-fluid" %> %>
     <% end %>
   </td>
   <td><%= product.name %></td>

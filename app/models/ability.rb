@@ -4,6 +4,7 @@ class Ability
   include CanCan::Ability
 
   def initialize user
+    can :create,[User]
     can :read, [Product]
     return if user.blank?
 
